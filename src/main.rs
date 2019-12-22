@@ -8,7 +8,7 @@ const RANGE: u32 = 18000;
 
 fn main() -> Result<(), Error> {
     let client = reqwest::Client::new();
-    let re = Regex::new(r###"pubdate" datetime="(.*)">"###).unwrap();
+    let re = Regex::new(r###"pubdate" datetime="(.*)">"###)?;
     (START..START+RANGE).into_par_iter().try_for_each(|i| {
         let url = format!("https://blogging.theadventurists.com/tracking/updates/show/{}/", i);
         let body = client.get(&url).query(&[("_bare/", "1")]).send()?.text()?;
