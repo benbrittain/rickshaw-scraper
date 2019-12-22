@@ -1,0 +1,12 @@
+[package]
+name = "rickshaw-scrape"
+version = "0.1.0"
+authors = ["Ben Brittain <ben@brittain.org>"]
+edition = "2018"
+
+[dependencies]
+rayon = "1.1"
+reqwest = "0.9.24"
+anyhow = "*"
+regex = "1"
+chrono = "*"
